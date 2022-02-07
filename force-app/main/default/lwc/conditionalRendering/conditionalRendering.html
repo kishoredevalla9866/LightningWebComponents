@@ -1,0 +1,56 @@
+<template>
+    <lightning-card title="Conditional Rendering1">
+        <lightning-button variant="brand" 
+                          label="click me" 
+                          title="click me" 
+                          onclick={handleClick} 
+                          class="slds-var-m-around_medium">
+        </lightning-button>
+        <template if:true={isShow}>
+            <div>Welcome to Salesforce Lightning Web Components</div>
+        </template>
+        <template if:false={isShow}>
+            <div>The is show property is set to be false in JAVASCRIPT</div>
+        </template>
+    </lightning-card>
+
+
+    <lightning-card title="Conditional Rendering2">
+        <div class="slds-var-p-around_medium lgc-bg">
+            <lightning-input type="text" 
+                             label="Enter hello to see the Data"
+                             onchange = {handlechange}>
+            </lightning-input>
+        </div>
+        <template if:true={method1}>
+            <div>Hurry!!!!!..... You entered the correct word</div>
+        </template>
+    </lightning-card>
+
+    <lightning-card title="Conditional Rendering3">
+        <lightning-button variant="success" 
+                          label="ENTER" 
+                          title="ENTER" 
+                          onclick={handlepress} class="slds-var-m-left_x-small">
+        </lightning-button>
+        <template if:true={isvisible}>
+            <div>My Name is {name} and i am {age} years. I am working in the {company} from last {number} months.....</div>
+        </template>
+        <template if:false={isvisible}>
+            <div>Please Click the button to see the Data.....Than you</div>
+        </template>
+    </lightning-card>
+
+    <lightning-card title="Conditional Rendering4">
+        <div class="slds-var-p-around_medium lgc-bg">
+            <lightning-input type="text" 
+                             label="Enter kishore to see the Data"
+                             onchange = {handledifference}>
+            </lightning-input>
+            <template if:true ={method2}>
+                <div>My Name is {name1} and i am {age} years. I am working in the {company} from last {number} months.....</div>
+            </template>
+        </div>
+    </lightning-card>
+    
+</template>

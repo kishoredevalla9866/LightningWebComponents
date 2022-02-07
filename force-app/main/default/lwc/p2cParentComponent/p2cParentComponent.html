@@ -1,0 +1,39 @@
+<template>
+    
+    <!-- Parent to child Communication using Primitive Data -->
+    <c-p2c-alert-component
+    message = "Welcome to salesforce"
+    title = "Parent to child Communication using Primitive Data"
+    is-show 
+    number = 100
+    ></c-p2c-alert-component>
+
+    <!-- Parent to child Communication using Non Primitive Data -->
+    <lightning-card>
+        <div class="slds-var-m-bottom_medium">
+            <c-p2c-carousel-component
+                carouseldetils={carouselData}
+            ></c-p2c-carousel-component>
+        </div>
+    </lightning-card>
+
+    <!-- Parent to child Communication Using an Action -->
+    <div class="slds-var-m-bottom_medium">
+        <lightning-card title="Parent to Child communication Using an Action">
+           <div class="slds-var-m-around_medium">
+               <lightning-input label="Enter Percentage" type="number" onchange={handlechange} value={percentage}></lightning-input>
+               <c-p2c-progress-bar-component
+                  progress-bar={percentage}
+               ></c-p2c-progress-bar-component>
+           </div>
+        </lightning-card>
+    </div>
+
+    <!-- Parent to child Communication Using child Method -->
+    <div class="slds-var-m-bottom_medium">
+        
+                <lightning-button variant="Brand" label="Reset Slider"  onclick={handleClick}></lightning-button>
+            
+        <c-p2c-slider-component></c-p2c-slider-component>
+    </div>
+</template>

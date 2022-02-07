@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Child to Parent Communication using simple Event">
+        <div class="slds-var-m-around_medium" onclose={handlebutton}>
+            <lightning-button label="Show Modal" variant="Success" onclick={handleClick}></lightning-button>
+            <div>
+                <template for:each={obj} for:item="item">
+                    <div key={item.id}>
+                        <ul>
+                            <li>ID       : {item.id}</li>
+                            <li>Name     : {item.Name}</li>
+                            <li>Industry : {item.Industry}</li>
+                        </ul>
+                    </div>
+            
+                </template>
+            </div>
+            <template if:true={isShow}>
+                <c-c2p-modal-component
+                  
+                ></c-c2p-modal-component>
+            </template>
+           
+        </div>
+    </lightning-card>
+</template>

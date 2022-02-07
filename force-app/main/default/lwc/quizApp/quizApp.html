@@ -1,0 +1,49 @@
+<template>
+    <lightning-card title="Quiz App">
+        <div class="slds-var-m-around_medium">
+            
+            <form>
+                <template for:each={myQuestions} for:item="question">
+                    <div key={question.id} class="slds-var-m-around_medium">
+                        <ul>
+                            <li><strong>{question.id} - {question.question}</strong></li>
+                        </ul>
+                        <div class="slds-grid slds-grid_vertical slds-var-m-around_medium">
+                            <div class="slds-col">
+                                <input type="radio" name={question.id} value="a" onchange={changeHandler} />
+                                {question.options.a}
+                            </div>
+                            <div class="slds-col">
+                                <input type="radio" name={question.id} value="b" onchange={changeHandler} />
+                                {question.options.b}
+                            </div>
+                            <div class="slds-col">
+                                <input type="radio" name={question.id} value="c" onchange={changeHandler} />
+                                {question.options.c}
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <lightning-button variant="brand"
+                                  type="Submit" 
+                                  label="Submit" 
+                                  title="Submit"
+                                  disabled={allNotSelected} 
+                                  onclick={handleSubmit} 
+                                  class="slds-var-m-around_medium">
+                </lightning-button>
+                <lightning-button variant="brand"
+                                  type="Reset" 
+                                  label="Reset" 
+                                  title="Reset" 
+                                  onclick={handleReset} 
+                                  class="slds-var-m-around_medium">
+                </lightning-button>
+            </form>
+            <template if:true={isSubmitted}>
+                <div class={isScroefull}><strong>You have scored {correctanswers} out of {myQuestions.length}</strong></div>
+            </template>
+            
+        </div>
+    </lightning-card>
+</template>

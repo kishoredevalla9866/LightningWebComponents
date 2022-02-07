@@ -1,0 +1,13 @@
+p{
+    color:chartreuse;
+    font-size : 20px;
+}
+
+.name{
+    color : royalblue;
+    font-size: 20px;
+}
+.name:hover{
+    color : red;
+    font-size: 30px;
+}

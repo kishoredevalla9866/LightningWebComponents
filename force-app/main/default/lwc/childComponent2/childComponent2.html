@@ -1,0 +1,16 @@
+<template>
+    <lightning-card>
+        <div class="slds-var-m-around_medium">
+            <template for:each={objDetails} for:item="item">
+                <div key={item.id}>
+                   <ul>
+                       <li>Id      :{item.id}</li>
+                       <li>Name    :{item.Name}</li>
+                       <li>Industry:{item.Industry}</li>
+                   </ul>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+    
+</template>
